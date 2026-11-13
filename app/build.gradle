@@ -6,6 +6,8 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'io.objectbox'
 
 android {
+    buildFeatures { buildConfig true }
+    kotlinOptions { jvmTarget = "17" }
     compileSdk 33
     defaultConfig {
         applicationId "com.louiskirsch.quickdynalist"
@@ -14,6 +16,16 @@ android {
         versionCode 55
         versionName "2.10.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    flavorDimensions "edition"
+    productFlavors {
+        original { dimension "edition" }
+        safiTest {
+            dimension "edition"
+            applicationIdSuffix ".safitest"
+            versionNameSuffix "-safi-test"
+            resValue "string", "app_name", "Quick Dynalist Test"
+        }
     }
     buildTypes {
         release {
@@ -57,7 +69,7 @@ dependencies {
 
 configurations {
     cleanedAnnotations
-    compile.exclude group: 'org.jetbrains', module: 'annotations'
+
 }
 
 repositories {

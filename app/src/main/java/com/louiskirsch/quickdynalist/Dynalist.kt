@@ -214,7 +214,7 @@ class Dynalist(private val context: Context) {
             Runtime.getRuntime().exec( "logcat -f " + outputFile.absolutePath)
 
             val logUri = FileProvider.getUriForFile(context,
-                    "com.louiskirsch.quickdynalist.fileprovider", outputFile)
+                    "${BuildConfig.APPLICATION_ID}.fileprovider", outputFile)
             Intent(Intent.ACTION_SEND).apply {
                 type = "vnd.android.cursor.dir/email"
                 putExtra(Intent.EXTRA_EMAIL, arrayOf(context.getString(R.string.bug_report_email)))

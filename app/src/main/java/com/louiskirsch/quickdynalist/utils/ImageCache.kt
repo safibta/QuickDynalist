@@ -70,7 +70,7 @@ class ImageCache(private val context: Context) {
     private fun getUri(source: String): Uri? {
         return getFile(source)?.let {
             FileProvider.getUriForFile(context,
-                    "com.louiskirsch.quickdynalist.fileprovider", it)
+                    "${com.louiskirsch.quickdynalist.BuildConfig.APPLICATION_ID}.fileprovider", it)
         }
     }
 
