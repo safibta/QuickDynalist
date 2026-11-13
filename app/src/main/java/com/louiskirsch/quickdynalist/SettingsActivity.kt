@@ -13,9 +13,9 @@ import androidx.preference.PreferenceFragmentCompat
 import com.louiskirsch.quickdynalist.objectbox.DynalistItem_
 import com.louiskirsch.quickdynalist.objectbox.DynalistTag
 import io.objectbox.kotlin.query
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.toast
-import org.jetbrains.anko.uiThread
+import com.louiskirsch.quickdynalist.utils.doAsync
+import com.louiskirsch.quickdynalist.utils.toast
+import com.louiskirsch.quickdynalist.utils.uiThread
 
 class SettingsActivity: AppCompatActivity() {
 

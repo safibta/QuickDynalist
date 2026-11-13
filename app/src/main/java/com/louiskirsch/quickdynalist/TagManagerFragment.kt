@@ -18,9 +18,9 @@ import com.louiskirsch.quickdynalist.objectbox.*
 import com.louiskirsch.quickdynalist.utils.children
 import io.objectbox.kotlin.query
 import kotlinx.android.synthetic.main.fragment_tag_manager.*
-import org.jetbrains.anko.alert
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
+import com.louiskirsch.quickdynalist.utils.alert
+import com.louiskirsch.quickdynalist.utils.doAsync
+import com.louiskirsch.quickdynalist.utils.uiThread
 
 class TagManagerFragment : DialogFragment() {
     private lateinit var item: DynalistItem

@@ -6,7 +6,6 @@ import com.louiskirsch.quickdynalist.objectbox.DynalistItem
 import com.louiskirsch.quickdynalist.objectbox.DynalistItem_
 import com.louiskirsch.quickdynalist.widget.ListAppWidget
 import io.objectbox.kotlin.query
-import org.jetbrains.anko.collections.forEachWithIndex
 import retrofit2.Response
 
 
@@ -41,7 +40,7 @@ class MoveItemJob(val item: DynalistItem, val parent: DynalistItem, val toPositi
                     }
                 }
                 currentChildren.add(resolvedPosition, item)
-                currentChildren.forEachWithIndex { i, it ->
+                currentChildren.forEachIndexed { i, it ->
                     it.position = i
                     it.syncJob = id
                 }

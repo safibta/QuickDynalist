@@ -11,7 +11,6 @@ import io.objectbox.kotlin.inValues
 import io.objectbox.kotlin.query
 import io.objectbox.query.QueryBuilder
 import org.greenrobot.eventbus.EventBus
-import org.jetbrains.anko.collections.forEachWithIndex
 import org.jetbrains.annotations.Nullable
 import java.util.*
 
@@ -142,7 +141,7 @@ class SyncJob(requireUnmeteredNetwork: Boolean = true, val isManual: Boolean = f
         val notAssociatedClientItems = clientItems.toMutableSet()
         val itemsWithInvalidMetaData = LinkedList<DynalistItem>()
 
-        newDocuments.forEachWithIndex { idx, doc ->
+        newDocuments.forEachIndexed { idx, doc ->
             syncDocument(service, token, doc, syncStart,
                     notAssociatedClientItems, itemsWithInvalidMetaData)
             // Report progress

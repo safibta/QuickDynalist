@@ -3,7 +3,7 @@ package com.louiskirsch.quickdynalist
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.louiskirsch.quickdynalist.jobs.SyncJob
-import org.jetbrains.anko.toast
+import com.louiskirsch.quickdynalist.utils.toast
 
 class SyncShortcutActivity : AppCompatActivity() {
 
